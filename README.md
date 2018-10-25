@@ -1,0 +1,237 @@
+# KhateRaho
+First Look
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+	<!-- Google Fonts --->
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+	<title>Khate Raho</title>
+	<style type="text/css">
+		.cover{
+			background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://images.pexels.com/photos/260922/pexels-photo-260922.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+			width: 100%;
+			height: 100vh;
+			background-size: cover;
+			background-repeat: no-repeat;
+			background-attachment: fixed;
+			background-position: center;
+		}
+		.navbar{
+			background-color: transparent;
+			z-index: 200;
+		}
+		.navbar-brand{
+			font-family: 'Pacifico', cursive;
+		}
+		.navbar-brand h2{
+			font-weight: bolder;
+			font-size: 50px;
+		}
+		.navbar ul li{
+			padding-right: 25px;
+		}
+		.navbar ul li a{
+			text-transform: uppercase;
+			color: white;
+			font-family: 'Teko', sans-serif;
+			font-size: 18px;
+		}
+		.navbar ul .active a{
+			color: #AB8751;
+			border-bottom: 2px solid #AB8751;
+		}
+		.navbar ul li a:hover{
+			color: #AB8751;
+			border-bottom: 2px solid #AB8751;	
+		}
+		.navbar-form .btn{
+			background-color: transparent;
+			border: 2px solid #AB8751;
+			padding: 10px 10px;
+			font-weight: bolder;
+		}
+		.navbar-form .btn:hover{
+			background-color: #AB8751;
+			border: 2px solid #AB8751;
+			padding: 10px 10px;	
+			color: white;
+		}
+		.modal .modal-content ul li a{
+			background-color: #AB8751;
+			color: white;
+		}
+		.modal .modal-content .log{
+			border: 2px solid #AB8751;
+			background-color: #AB8751;
+		}
+		/*.panel8 .modal-body img{
+			width: 100px;
+			height: 100px;
+		}*/
+
+
+	</style>
+</head>
+<body>
+	<div class="container-fluid cover">
+		<nav class="navbar navbar-default fixed-top navbar-expand-lg">
+			<div class="container">
+				<a href="#" class="navbar-brand text-white"><h2>Khate Raho</h2></a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse"
+    				aria-controls="#collapse" aria-expanded="false" aria-label="Toggle navigation">
+    			<span><i class="fas fa-bars orange-text"></i></span>
+  				</button>
+				<div class="collapse navbar-collapse" id="collapse">
+					<ul class="nav navbar-nav ml-auto list-unstyled list-inline">
+						<li class="list-inline active">
+							<a href="#">Home</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Find your hotel</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Book a table</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Takeaway</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right">
+						<a href="#" class="btn text-uppercase" data-toggle="modal" data-target="#modalLRForm">Sign Up</a>
+						<a href="#" class="btn text-uppercase">For Merchant</a>
+					</form>
+				</div>
+			</div>
+		</nav>
+	</div>
+	<div class="modal fade" id="modalLRForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog cascading-modal" role="document">
+        <!--Content-->
+        <div class="modal-content">
+
+            <!--Modal cascading tabs-->
+            <div class="modal-c-tabs">
+
+                <!-- Nav tabs -->
+                <ul class="nav nav-tabs md-tabs tabs-2 light-blue darken-3" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#panel7" role="tab"><i class="fa fa-user mr-1"></i> Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#panel8" role="tab"><i class="fa fa-user-plus mr-1"></i> Register</a>
+                    </li>
+                </ul>
+
+                <!-- Tab panels -->
+                <div class="tab-content">
+                    <!--Panel 7-->
+                    <div class="tab-pane fade in show active" id="panel7" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body mb-1">
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput10" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput10">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput11" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput11">Your password</label>
+                            </div>
+                            <div class="text-center mt-2">
+                                <button class="btn log">Log in <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+                        </div>
+                        <!--Footer-->
+                        <div class="modal-footer">
+                            <div class="options text-center text-md-right mt-1">
+                                <p>Not a member? <a href="#" class="blue-text">Sign Up</a></p>
+                                <p>Forgot <a href="#" class="blue-text">Password?</a></p>
+                            </div>
+                            <button type="button" class="btn log waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                    <!--/.Panel 7-->
+
+                    <!--Panel 8-->
+                    <div class="tab-pane fade panel8" id="panel8" role="tabpanel">
+
+                        <!--Body-->
+                        <div class="modal-body">
+                        	 <!-- <img src="https://mdbootstrap.com/img/Photos/Avatars/img%20%281%29.jpg" alt="avatar" class="rounded-circle img-responsive"> -->
+                            <div class="md-form form-sm mb-5">
+                                <i class="fas fa-user-tie prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Name</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-envelope prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Your email</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput13" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput13">Your password</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-4">
+                                <i class="fa fa-lock prefix"></i>
+                                <input type="password" id="modalLRInput14" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput14">Repeat password</label>
+                            </div>
+
+                            <div class="md-form form-sm mb-5">
+                                <i class="fas fa-mobile prefix"></i>
+                                <input type="email" id="modalLRInput12" class="form-control form-control-sm validate">
+                                <label data-error="wrong" data-success="right" for="modalLRInput12">Contact No</label>
+                            </div>
+
+                            <div class="text-center form-sm mt-2">
+                                <button class="btn log">Sign up <i class="fa fa-sign-in ml-1"></i></button>
+                            </div>
+
+                        </div>
+                        <!--Footer-->
+                        <!-- <div class="modal-footer">
+                            <div class="options text-right">
+                                <p class="pt-1">Already have an account? <a href="#" class="blue-text">Log In</a></p>
+                            </div>
+                            <button type="button" class="btn log waves-effect ml-auto" data-dismiss="modal">Close</button>
+                        </div> -->
+                    </div>
+                    <!--/.Panel 8-->
+                </div>
+
+            </div>
+        </div>
+        <!--/.Content-->
+    </div>
+</div>
+	
+
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+</body>
+</html>
