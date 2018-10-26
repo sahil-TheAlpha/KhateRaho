@@ -10,15 +10,29 @@
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
 	<!-- Material Design Bootstrap -->
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+	<!-- Google Fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
 	<title>Merchant Login</title>
 	<style type="text/css">
 	body{ 
-		background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");
+		/*background-image:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),url("https://hdwallsource.com/img/2014/9/blur-26347-27038-hd-wallpapers.jpg");*/
 		/*background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(https://images.pexels.com/photos/1128678/pexels-photo-1128678.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);*/ 
+		background-color: #D7D7DF;
 		background-repeat:no-repeat; 
 		background-position:center; 
 		background-size:cover;
 		height: 100vh;
+	}
+	.navbar{
+		background-color: #009688;
+		z-index: 200;
+	}
+	.navbar-brand{
+		font-family: 'Pacifico', cursive;
+	}
+	.navbar-brand h2{
+		font-weight: bolder;
+		font-size: 50px;
 	}	
 	.panel h2{ 
 		color:aqua-gradient; 
@@ -39,7 +53,7 @@
   		height: 50px;
   		line-height: 50px;
 	}
-	.container{
+	.box{
 		padding-top: 150px;
 	}
 	.main-div{
@@ -97,7 +111,36 @@
 	</style>
 </head>
 <body>
-	<div class="container">
+	<nav class="navbar navbar-default fixed-top navbar-expand-lg">
+			<div class="container">
+				<a href="#" class="navbar-brand text-white"><h2>Khate Raho</h2></a>
+				<!-- <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapse"
+    				aria-controls="#collapse" aria-expanded="false" aria-label="Toggle navigation">
+    			<span><i class="fas fa-bars orange-text"></i></span>
+  				</button>
+				<div class="collapse navbar-collapse" id="collapse">
+					<ul class="nav navbar-nav ml-auto list-unstyled list-inline">
+						<li class="list-inline">
+							<a href="#">Home</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Find your hotel</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Book a table</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Takeaway</a>
+						</li>
+					</ul>
+					<form class="navbar-form navbar-right">
+						<a href="#" class="btn text-uppercase" data-toggle="modal" data-target="#modalLRForm">Sign Up</a>
+						<a href="#" class="btn text-uppercase">For Merchant</a>
+					</form>
+				</div> -->
+			</div>
+		</nav>
+	<div class="container box">
 		<div class="login-form">
 			<div class="main-div">
     			<div class="panel">
