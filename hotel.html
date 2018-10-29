@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+	<!-- Google Fonts --->
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+	<title>Hotel Menu</title>
+	<style type="text/css">
+		body{
+			margin: 0px;
+			padding: 0px;
+			background-color: #D7D7DF;
+		}
+		.navbar{
+			background-color: #009688;
+			z-index: 200;
+		}
+		.navbar-brand{
+			font-family: 'Pacifico', cursive;
+		}
+		.navbar-brand h2{
+			font-weight: bolder;
+			font-size: 50px;
+		}
+		.navbar ul li{
+			padding-right: 25px;
+			padding-top: 10px;
+		}
+		.navbar ul li a{
+			text-transform: uppercase;
+			color: white;
+			font-family: 'Teko', sans-serif;
+			font-size: 18px;
+		}
+		.navbar ul .active a{
+			border-bottom: 2px solid white;
+		}
+		.navbar ul li a:hover{
+			border-bottom: 2px solid white;
+		}
+		.navbar-form .btn{
+			padding: 10px 10px;
+			font-weight: bolder;
+			font-size: 20px;
+			text-transform: none;
+		}
+		.dropdown-menu{
+			width: 200px;
+		}
+		.dropdown-item:hover{
+			transform: scale(1.2);
+			color: #AB8751;
+		}
+		.main{
+			padding-top: 150px;
+		}
+		.main .head h1{
+			font-family: 'Pacifico', cursive;
+			color: #009688;
+		}
+		.col-md-7 ul li img{
+			width: 150px;
+			height: 150px;
+			transform: translateY(-30px);
+		}
+		.font{
+			font-size: 25px;
+			margin-top: -20px;
+		}
+		.font a{
+			color: #009688;
+		}
+		.vote button{
+			background-color: #009688;
+		}
+		.vote{
+			transform: translateY(-50px);
+		}
+		.detail li{
+			font-size: 12px;
+			padding-left: 10px;
+			padding-top: 5px;
+		}
+		.order{
+			background-color: #009688;
+		}
+		.card{
+			width: 150px;
+			height: 100px;
+		}
+		.card-title{
+			font-size: 12px;
+		}
+		.card-text a{
+			font-size: 12px;
+		}
+		.small{
+			font-size: 12px;
+		}
+		.card img{
+			width: 150px;
+			height: 150px;
+		}
+		.col-md-3 ul li{
+			padding-top: 30px;
+			transform: translateX(-10px);
+		}
+	</style>
+</head>
+<body>
+	<nav class="navbar navbar-default fixed-top navbar-expand-lg">
+		<div class="container">
+			<a href="index.html" class="navbar-brand text-white" target="_blank"><h2>Khate Raho</h2></a>
+				<div class="collapse navbar-collapse" id="collapse">
+					<ul class="nav navbar-nav ml-auto list-unstyled list-inline">
+						<li class="list-inline active">
+							<a href="#">Home</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Find your hotel</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Book a table</a>
+						</li>
+						<li class="list-inline">
+							<a href="#">Takeaway</a>
+						</li>
+					</ul>
+				</div>
+			<form class="navbar-form navbar-right dropdown">
+				<a href="#" class="dropdown-toggle btn text-white" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+   	 			aria-expanded="false">Welcome, Deeraj!</a>
+   	 			<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+    				<a class="dropdown-item font-weight-bold black-text" href="#"><i class="fas fa-truck"></i>&nbsp;Your Orders</a>
+    				<div class="dropdown-divider"></div>
+    				<a class="dropdown-item font-weight-bold black-text" href="#"><i class="far fa-user-circle"></i>&nbsp;Account Settings</a>
+    				<div class="dropdown-divider"></div>
+    				<a class="dropdown-item font-weight-bold black-text" href="#"><i class="fas fa-sign-out-alt"></i>&nbsp;Logout</a>
+  				</div>
+			</form>
+		</div>
+	</nav>
+	<div class="container-fluid">
+		<div class="container main">
+			<div class="row">
+				<div class="col-sm-12 head">
+					<h1 class="font-weight-bold">Browse Restaurants in Bengaluru...</h1>
+					<hr class="font-weight-bold lighten-1 black">
+				</div>
+			</div>	
+			<div class="row">
+				<div class="col-sm-0 col-md-2 white py-2">
+					<h5 class="black-text text-uppercase">Filters</h5>
+					<hr class="black">
+					<div class="form-check">
+						<input type="checkbox" name="table" id="table" class="form-check-input">
+						<label for="table" class="form-check-label">Book a Table</label>
+					</div>
+					<hr class="black">
+					<div class="form-check">
+						<input type="checkbox" name="table" id="table" class="form-check-input">
+						<label for="table" class="form-check-label">Order Online</label>
+					</div>
+					<hr class="black">
+					<ul class="list-unstyled">
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2" >
+  							<label class="form-check-label" for="defaultUnchecked2">Pure Veg</label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2" >
+  							<label class="form-check-label" for="defaultUnchecked2">Free Delivery</label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2" >
+  							<label class="form-check-label" for="defaultUnchecked2">Online Payments</label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2" >
+  							<label class="form-check-label" for="defaultUnchecked2">Promotions</label>
+						</li>
+					</ul>
+					<hr class="black">
+					<h6 class="black-text">Sort by</h6>
+					<ul class="list-unstyled">
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Popularity&nbsp;<span class="text-muted">-&nbsp;High to Low</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Rating&nbsp;<span class="text-muted">-&nbsp;High to Low</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Cost&nbsp;<span class="text-muted">-&nbsp;High to Low</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2" >
+  							<label class="form-check-label" for="defaultUnchecked2">Recently Added&nbsp;<span class="text-muted">-&nbsp;New to Old</span></label>
+						</li>
+					</ul>
+					<hr class="black">
+					<h6 class="black-text">Cuisines</h6>
+					<ul class="list-unstyled">
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">North-Indian&nbsp;<span class="text-muted">-&nbsp;528</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">South-Indian&nbsp;<span class="text-muted">-&nbsp;12</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Rajasthani&nbsp;<span class="text-muted">-&nbsp;366</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Continental&nbsp;<span class="text-muted">-&nbsp;126</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Mexican&nbsp;<span class="text-muted">-&nbsp;99</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Lebanese&nbsp;<span class="text-muted">-&nbsp;42</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Thai&nbsp;<span class="text-muted">-&nbsp;237</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Chinese&nbsp;<span class="text-muted">-&nbsp;429</span></label>
+						</li>
+					</ul>
+					<hr class="black">
+					<h6 class="black-text">Categories</h6>
+					<ul class="list-unstyled">
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Dine-out&nbsp;<span class="text-muted">-&nbsp;1,528</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Drinks & Nightlife&nbsp;<span class="text-muted">-&nbsp;876</span></label>
+						</li>
+						<li class="list-item form-check">
+							<input type="checkbox" class="form-check-input" id="defaultUnchecked2">
+  							<label class="form-check-label" for="defaultUnchecked2">Cafes&nbsp;<span class="text-muted">-&nbsp;366</span></label>
+						</li>
+					</ul>
+				</div>
+				<div class="col-sm-8 col-md-7">
+					<div class="item white">
+						<ul class="list-unstyled list-inline">
+							<li class="list-inline-item px-2">
+								<img class="img-responsive" src="https://images.pexels.com/photos/5928/salad-healthy-diet-spinach.jpg?auto=compress&cs=tinysrgb&h=350">
+							</li>
+							<li class="list-inline-item">
+								<ul class="list-unstyled">
+									<li class=""><p class="mt-sm-4">LOUNGE</p></li>
+									<li class="font"><a href="#" class="font-weight-bold">eat.fit</a></li>
+									<li class=""><a href="#" class="black-text font-weight-bold">HSR</a></li>
+									<li class="text-muted"><p class="text-muted">16, 1st Main Road, Muneswara Nagar, Sector-6</p></li> 
+								</ul>
+							</li>
+							<li class="list-inline-item vote pl-sm-2">
+								<button type="text">4.3</button>
+								<p class="text-muted">1,046 Votes</p>
+							</li>
+						</ul>
+						<hr class="black w-100 font-weight-bold">
+						<ul class="list-unstyled detail">
+							<li class="list-item text-muted">Cuisines:<a href="#" class="black-text pl-5 font-weight-bold">Cafe,Continental</a></li>
+							<li class="list-item text-muted">Hours: &nbsp;&nbsp;&nbsp;<a href="#" class="black-text pl-5 font-weight-bold">Monday Closed,Tuesday to Sunday(12AM - 11PM)</a></li>
+							<li class="list-item text-muted">Happy Hours:<a href="#" class="black-text pl-4 font-weight-bold">1+1, 2+2 on Pitcher , Tower & Domestic Drinks.</a></li>
+						</ul>
+						<ul class="list-unstyled list-inline text-center justify-content-sm-between align-items-sm-center">
+							<li class="list-inline-item btn btn-default order">ORDER NOW</li>
+							<li class="list-inline-item btn btn-default order">VIEW MENU</li>
+							<li class="list-inline-item btn btn-default order">BOOK A TABLE</li>
+						</ul>
+					</div>
+					<div class="item white">
+						<ul class="list-unstyled list-inline">
+							<li class="list-inline-item px-2">
+								<img class="img-responsive" src="https://images.pexels.com/photos/5928/salad-healthy-diet-spinach.jpg?auto=compress&cs=tinysrgb&h=350">
+							</li>
+							<li class="list-inline-item">
+								<ul class="list-unstyled">
+									<li class=""><p class="mt-sm-4">CASUAl DINING</p></li>
+									<li class="font"><a href="#" class="font-weight-bold">Smoke House Delhi</a></li>
+									<li class=""><a href="#" class="black-text font-weight-bold">Indiranagar</a></li>
+									<li class="text-muted"><p class="text-muted">1209, 100 Feet Road, Opposite Apollo Clinic, IN</p></li> 
+								</ul>
+							</li>
+							<li class="list-inline-item vote pl-sm-2">
+								<button type="text">4.6</button>
+								<p class="text-muted">5,294 Votes</p>
+							</li>
+						</ul>
+						<hr class="black w-100 font-weight-bold">
+						<ul class="list-unstyled detail">
+							<li class="list-item text-muted">Cuisines:<a href="#" class="black-text pl-5 font-weight-bold">European, Italian, Desserts, Steak</a></li>
+							<li class="list-item text-muted">Hours: &nbsp;&nbsp;&nbsp;<a href="#" class="black-text pl-5 font-weight-bold">Monday to Sunday(9AM - 1AM)</a></li>
+							<li class="list-item text-muted">Happy Hours:<a href="#" class="black-text pl-4 font-weight-bold">2+1 on International Drinks</a></li>
+						</ul>
+						<ul class="list-unstyled list-inline text-center justify-content-sm-between align-items-sm-center">
+							<li class="list-inline-item btn btn-default order">ORDER NOW</li>
+							<li class="list-inline-item btn btn-default order">VIEW MENU</li>
+							<li class="list-inline-item btn btn-default order">BOOK A TABLE</li>
+						</ul>
+					</div>
+					<div class="item white">
+						<ul class="list-unstyled list-inline">
+							<li class="list-inline-item px-2">
+								<img class="img-responsive" src="https://images.pexels.com/photos/5928/salad-healthy-diet-spinach.jpg?auto=compress&cs=tinysrgb&h=350">
+							</li>
+							<li class="list-inline-item">
+								<ul class="list-unstyled">
+									<li class=""><p class="mt-sm-4">CASUAl DINING , BAR</p></li>
+									<li class="font"><a href="#" class="font-weight-bold">Buff Buffet Buff</a></li>
+									<li class=""><a href="#" class="black-text font-weight-bold">Blu Petal Hotel, Koramangala</a></li>
+									<li class="text-muted"><p class="text-muted">60, Jyothi Nivas College Road, Koramangala, IN</p></li> 
+								</ul>
+							</li>
+							<li class="list-inline-item vote pl-sm-2">
+								<button type="text">4.5</button>
+								<p class="text-muted">2,878 Votes</p>
+							</li>
+						</ul>
+						<hr class="black w-100 font-weight-bold">
+						<ul class="list-unstyled detail">
+							<li class="list-item text-muted">Cuisines:<a href="#" class="black-text pl-5 font-weight-bold">North-Indian,Chinese,Continental,Thai,Salad</a></li>
+							<li class="list-item text-muted">Hours: &nbsp;&nbsp;&nbsp;<a href="#" class="black-text pl-5 font-weight-bold">7-10AM, 12-3:30PM, 7-11:30PM</a></li>
+							<li class="list-item text-muted">Happy Hours:<a href="#" class="black-text pl-4 font-weight-bold">2+2 on Gold</a></li>
+						</ul>
+						<ul class="list-unstyled list-inline text-center justify-content-sm-between align-items-sm-center">
+							<li class="list-inline-item btn btn-default order">ORDER NOW</li>
+							<li class="list-inline-item btn btn-default order">VIEW MENU</li>
+							<li class="list-inline-item btn btn-default order">BOOK A TABLE</li>
+						</ul>
+					</div>
+					<div class="item white">
+						<ul class="list-unstyled list-inline">
+							<li class="list-inline-item px-2">
+								<img class="img-responsive" src="https://images.pexels.com/photos/5928/salad-healthy-diet-spinach.jpg?auto=compress&cs=tinysrgb&h=350">
+							</li>
+							<li class="list-inline-item">
+								<ul class="list-unstyled">
+									<li class=""><p class="mt-sm-4">CASUAl DINING</p></li>
+									<li class="font"><a href="#" class="font-weight-bold">Malabar Bay</a></li>
+									<li class=""><a href="#" class="black-text font-weight-bold">BTM</a></li>
+									<li class="text-muted"><p class="text-muted">43, Krishna Nagar, SG Pallya Road,Bangalore</p></li> 
+								</ul>
+							</li>
+							<li class="list-inline-item vote pl-sm-2">
+								<button type="text">4.1</button>
+								<p class="text-muted">1,419 Votes</p>
+							</li>
+						</ul>
+						<hr class="black w-100 font-weight-bold">
+						<ul class="list-unstyled detail">
+							<li class="list-item text-muted">Cuisines:<a href="#" class="black-text pl-5 font-weight-bold">Kerala, SeaFood, Chinese</a></li>
+							<li class="list-item text-muted">Hours: &nbsp;&nbsp;&nbsp;<a href="#" class="black-text pl-5 font-weight-bold">8AM-10:30PM(Mon-Sun)</a></li>
+							<li class="list-item text-muted">Happy Hours:<a href="#" class="black-text pl-4 font-weight-bold">Flat 10% Off</a></li>
+						</ul>
+						<ul class="list-unstyled list-inline text-center justify-content-sm-between align-items-sm-center">
+							<li class="list-inline-item btn btn-default order">ORDER NOW</li>
+							<li class="list-inline-item btn btn-default order">VIEW MENU</li>
+							<li class="list-inline-item btn btn-default order">BOOK A TABLE</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-sm-4 col-md-3">
+					<p class="text-muted" style="float: right;">POPULAR</p>
+					<ul class="list-unstyled list-inline">
+						<li class="list-inline-item">
+							<div class="card">
+								<img class="img-responsive card-img-top" src="https://images.pexels.com/photos/5928/salad-healthy-diet-spinach.jpg?auto=compress&cs=tinysrgb&h=350">
+								<div class="card-body white">
+									<p class="black-text card-title font-weight-bold text-center">Once Upon A Rooftop</p>
+									<p class="text-muted card-text small text-center"><a href="#" class="text-muted text-center">Jayanagar</a><br/>Book a table NOW and experience the best rooftop!</p>
+								</div>
+							</div>
+						</li>
+						<!-- <li class="list-inline-item">
+							<div class="card">
+								<img class="img-responsive card-img-top" src="https://images.pexels.com/photos/5928/salad-healthy-diet-spinach.jpg?auto=compress&cs=tinysrgb&h=350">
+								<div class="card-body white">
+									<p class="black-text card-title font-weight-bold text-center">ECHOES</p>
+									<p class="text-muted card-text small text-center"><a href="#" class="text-muted text-center">Koramangala</a><br/>Walk in to explore the best Dine in option in town!</p>
+								</div>
+							</div>
+						</li> -->
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+</body>
+</html>
