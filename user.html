@@ -111,6 +111,12 @@
 			width: 700px;
 			height: 45px;
 		}
+		.modal-header{
+			background-color: #AB8751;
+		}
+		.modal-footer .btn{
+			background-color: #AB8751;
+		}
 
 	</style>
 </head>
@@ -132,7 +138,7 @@
 							<a href="#">Find your hotel</a>
 						</li>
 						<li class="list-inline">
-							<a href="#">Book a table</a>
+							<a href="#" data-toggle="modal" data-target="#modalContactForm">Book a table</a>
 						</li>
 						<li class="list-inline">
 							<a href="#">Takeaway</a>
@@ -152,6 +158,48 @@
 				</form>
 			</div>
 		</nav>
+		<div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    		<div class="modal-dialog modal-notify modal-side modal-top-right" role="document">
+        		<div class="modal-content">
+            		<div class="modal-header text-center">
+                		<h1 class="modal-title w-100 font-weight-bold text-white">BOOK A TABLE</h1>
+                		<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    		<span aria-hidden="true">&times;</span>
+                		</button>
+            		</div>
+            		<div class="modal-body mx-3">
+                		<div class="md-form">
+                    		<i class="fas fa-clock prefix grey-text"></i>
+                    		<input type="time" id="form34" class="form-control validate">
+                    		<label data-error="wrong" data-success="right" for="form34"></label>
+                		</div>
+                		<div class="md-form">
+                    		<i class="fas fa-calendar-alt prefix grey-text"></i>
+                    		<input type="date" id="form29" class="form-control validate">
+                    		<label data-error="wrong" data-success="right" for="form29"></label>
+                		</div>
+                		<div class="md-form">
+                    		<i class="fas fa-users prefix grey-text"></i>
+                    		<input type="number" id="form32" class="form-control validate"/>
+                    		<label data-error="wrong" data-success="right" for="form32">How many people?</label>
+                		</div>
+                		<div class="md-form">
+                    		<i class="fas fa-table prefix grey-text"></i>
+                    		<input type="number" id="form8" class="form-control validate" />
+                    		<label data-error="wrong" data-success="right" for="form8">How many tables?</label>
+                		</div>
+                		<div class="md-form">
+                    		<i class="fas fa-envelope prefix grey-text"></i>
+                    		<textarea type="textarea" id="form8" class="md-textarea form-control" rows="2"></textarea>
+                    		<label data-error="wrong" data-success="right" for="form8">Any special instructions</label>
+                		</div>
+            		</div>
+            		<div class="modal-footer d-flex justify-content-center">
+                		<button class="btn">Add<i class="fa fa-paper-plane-o ml-1"></i></button>
+            		</div>
+        		</div>
+    		</div>
+    	</div>
 		<div class="container introduction">
 			<div class="row">
 				<div class="col-sm-12">
