@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!--Meta Tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Font Awesome -->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+	<!-- Bootstrap core CSS -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Material Design Bootstrap -->
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/css/mdb.min.css" rel="stylesheet">
+	<!-- Google Fonts --->
+	<link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Teko:700" rel="stylesheet">
+	<title>Merchant Dashborad</title>
+	<style type="text/css">
+		html,body{
+			margin: 0px;
+			padding: 0px;
+			width: 100%;
+			height: 100%;
+		}
+		.col-sm-3 h1{
+			font-family: 'Pacifico', cursive; 
+		}
+		.col-sm-3 img{
+			width: 150px;
+			height: 150px;
+			border-radius: 50%;
+			/*margin-top: 180px;*/
+			transform: translateX(80px);
+			margin-bottom: 20px;
+			object-fit: cover;
+		}
+		.col-sm-3{
+			background-color: #009688;
+			width: 100%;
+		}
+		.col-sm-3 ul li{
+			padding-top: 10px;
+		}
+		.col-sm-3 ul li a{
+			font-size: 15px;
+			font-weight: bold;
+			text-transform: uppercase;
+		}
+		.charts{
+			background-color: #D7D7DF;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-sm-3 py-5">
+				<img class="img-responsive" src="https://images.pexels.com/photos/91227/pexels-photo-91227.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260">
+				<h1 class="font-weight-bold text-center text-white">Welcome, Deeraj!</h1>
+				<ul class="list-unstyled list-inline">
+					<li class="list-item text-center"><a href="#" class="text-white"></i>Account Settings</a></li>
+					<li class="list-item text-center"><a href="#" class="text-white">Restaurant Details</a></li>
+					<li class="list-item text-center"><a href="#" class="text-white" onclick="inventory()">Inventory</a></li>
+					<li class="list-item text-center"><a href="#" class="text-white">Your Orders</a></li>
+					<li class="list-item text-center"><a href="#" class="text-white">Logout</a></li>
+				</ul>
+			</div>
+			<div class="col-sm-9 charts" id="charts">
+				<div class="container-fluid">
+					<div class="row minimalist">
+						<div class="col-sm-4" style="border: 10px solid white; border-radius: 20px;">
+							<div id="chart"></div>
+							<h3 class="text-center font-weight-bold">Rs 2,24,126&nbsp;<i class="fas fa-level-up-alt"></i></h3>
+						</div>
+						<div class="col-sm-4" style="border: 10px solid white; border-radius: 20px;">
+							<div id="chart1"></div>
+							<h3 class="text-center font-weight-bold">Rs 1,24,236&nbsp;<i class="fas fa-level-down-alt"></i></h3>
+						</div>
+						<div class="col-sm-4" style="border: 10px solid white; border-radius: 20px;">
+							<div id="chart2"></div>
+							<h3 class="text-center font-weight-bold">Rs 1,02,500&nbsp;<i class="fas fa-level-up-alt"></i></h3>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-sm-6 doughnut">
+							<canvas id="doughnutChart"></canvas>
+							<h3 class="text-center font-weight-bold text-uppercase">Product Sales</h3>
+						</div>
+						<div class="col-sm-6 bootstrap">
+							<canvas id="pieChart"></canvas>
+							<h3 class="text-center font-weight-bold text-uppercase">Modes of Payment</h3>
+						</div>
+					</div>
+					<div class="row mt-5">
+						<div class="col-sm-5 orders">
+							<canvas id="barChart"></canvas>
+							<h3 class="font-weight-bold text-center text-uppercase">Orders in the past 6 months</h3>
+						</div>
+						<div class="col-sm-7 orders">
+							<h3 class="font-weight-bold text-center text-uppercase">Recent Orders</h3>
+							<table class="table table-striped table-hover" style="border: 1px solid black;">
+								<thead>
+									<tr>
+										<th class="font-weight-bold">Name</th>
+										<th class="font-weight-bold">Address</th>
+										<th class="font-weight-bold">Contact No</th>
+										<th class="font-weight-bold">Order</th>
+										<th class="font-weight-bold">Time</th>
+										<th class="font-weight-bold">Mode of Payment</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Sahil</td>
+										<td>BTM</td>
+										<td>7507451610</td>
+										<td>Burger</td>
+										<td>1:00PM</td>
+										<td>Cash</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- JQuery -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!-- Bootstrap tooltips -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.4/umd/popper.min.js"></script>
+	<!-- Bootstrap core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/js/bootstrap.min.js"></script>
+	<!-- MDB core JavaScript -->
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.5.11/js/mdb.min.js"></script>
+	<!-- Apex JS --->
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+	<script type="text/javascript">		
+		var options = {
+            chart: {
+                height: 300,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '50%',
+                    }
+                },
+            },
+            series: [69],
+            labels: ['Total Sales'],
+
+        }
+        var chart = new ApexCharts(
+            document.querySelector("#chart"),
+            options
+        );
+
+        chart.render();
+        var options = {
+            chart: {
+                height: 300,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '50%',
+                    }
+                },
+            },
+            series: [38],
+            labels: ['Total Expenses'],
+
+        }
+        var chart = new ApexCharts(
+            document.querySelector("#chart1"),
+            options
+        );
+
+        chart.render();
+        var options = {
+            chart: {
+                height: 300,
+                type: 'radialBar',
+            },
+            plotOptions: {
+                radialBar: {
+                    hollow: {
+                        size: '50%',
+                    }
+                },
+            },
+            series: [40],
+            labels: ['Total Profit'],
+
+        }
+        var chart = new ApexCharts(
+            document.querySelector("#chart2"),
+            options
+        );
+
+        chart.render();
+        //Start of Doughnut Chart//
+		var ctxD = document.getElementById("doughnutChart").getContext('2d');
+		var myLineChart = new Chart(ctxD, {
+    	type: 'doughnut',
+    	width: 600,
+    	data: {
+        labels: ["Burgers", "Pizza", "Pasta", "Sandwiches", "Biryani", "Shakes"],
+        datasets: [
+            {
+                data: [530, 210, 318, 90, 120, 438],
+                backgroundColor: ["#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360", "#D7D7DF"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#FFC870", "#A8B3C5", "#616774", "#D7D7DF"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
+		//Start of Bootstrap Chart//
+		var ctxP = document.getElementById("pieChart").getContext('2d');
+		var myPieChart = new Chart(ctxP, {
+    	type: 'pie',
+    	data: {
+        labels: ["Cash", "Paytm", "Card"],
+        datasets: [
+            {
+                data: [300, 50, 120],
+                backgroundColor: ["#F7464A", "#46BFBD", "#949FB1"],
+                hoverBackgroundColor: ["#FF5A5E", "#5AD3D1", "#616774"]
+            }
+        ]
+    },
+    options: {
+        responsive: true
+    }
+});
+		//Start of Line Charts
+var ctxB = document.getElementById("barChart").getContext('2d');
+var myBarChart = new Chart(ctxB, {
+    type: 'bar',
+    data: {
+        labels: ["May", "June", "July", "Aug", "Sept", "Oct"],
+        datasets: [{
+            label: 'labels',
+            data: [380, 291, 436, 154, 234, 312],
+            backgroundColor: [
+              	'rgba(255,99,132,0.5)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.7)',
+                'rgba(75, 192, 192, 0.4)',
+                'rgba(153, 102, 255, 0.9)',
+                'rgba(255, 159, 64, 0.3)'
+            ],
+            borderColor: [
+                "#F7464A", "#46BFBD", "#FDB45C", "#949FB1", "#4D5360", "#009688"
+
+            ],
+            borderWidth: 10
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+    
+	</script>
+</body>
+</html>
